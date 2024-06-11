@@ -33,11 +33,8 @@ IMAGE = "https://media.discordapp.net/attachments/1170463640764293140/1199014500
 author = "Honoured 🫸🏻🔴🔵🫷🏻🤌🏻🫴🏻⏤͟͟͞🟣 Self Bot"
 nuke = False
 
-spam_channel = ["sakai solos","by sakai","nuked by sakai"]
-spam_message = ["""||@everyone|| Nuked by sakai.
-https://tenor.com/view/jujutsu-kaisen-manga-manga-jujutsu-kaisen-gojo-vs-toji-gif-25369402""",
-"""||@everyone|| Sakai Solos
-https://tenor.com/view/jujutsu-kaisen-manga-manga-jujutsu-kaisen-gojo-vs-toji-gif-25369402"""]
+spam_channel = config["spam_channel_name"]
+spam_message = config["spam_role_name"]
 
 async def delete_channels(channel_id):
     async with ClientSession(headers=headers) as cs:
@@ -133,7 +130,7 @@ async def rdel(ctx):
 async def on_guild_channel_create(channel):
     global nuke
     nuke = True
-    embed = discord.Embed(title="Sakai Solos 🗣️",description="Nuked by Sakai",color=0x800080)
+    embed = discord.Embed(title="Raided lol 🗣️",description="Nuked",color=0x800080)
     embed.set_image(url=IMAGE)
     webhook = await channel.create_webhook(name="The Honoured One")
     while nuke:
@@ -348,7 +345,6 @@ async def utilities(ctx):
 {prefix}tokeninfo [token] - Get info on a token
 {prefix}ipinfo [IP] - Get info on a IP
 {prefix}purge [amount] - Purge channel Messages
-{prefix}ytsearch [query] - Search something on yt
 {prefix}stream/play/listen/watch - Change your Status
 """
     url = make_embed("Utility cmds",content,IMAGE)
@@ -364,7 +360,6 @@ async def fun(ctx):
 {prefix}hug [user] - Hug somebody
 {prefix}slap [user] - Slap somebody
 {prefix}waifu - Random waifu 🔞
-{prefix}white - Send an invisible wall of text
 """
     url = make_embed("Fun cmds",content,IMAGE)
     await ctx.send(url)
@@ -449,22 +444,6 @@ NSFW Status: {str(anime.is_nsfw())}
 """
     url = make_embed(anime.title_english,content,anime.poster)
     await ctx.send(url)
-
-@gojo.command()
-async def white(ctx):
-    await ctx.message.delete()
-    invisible = """
-⁢ \n"""*500
-    await ctx.send(invisible)
-
-@gojo.command()
-async def ytsearch(ctx,*,search=""):
-    await ctx.message.delete()
-    query = urllib.parse.urlencode({"search_query":search})
-    content = urllib.request.urlopen("http://www.youtube.com/results?" + query)
-    search_results = re.findall(r"watch\?v=(\S{11})", content.read().decode())
-    nab = search.replace('@', '')
-    await ctx.send(f"{nab}:\nhttp://www.youtube.com/watch?v=" + search_results[0])
 
 @gojo.event
 async def on_ready():
