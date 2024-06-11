@@ -4,7 +4,7 @@ import asyncio
 from pystyle import Colors,Colorate
 from colorama import Fore
 
-os.system("title Strongest DMspam")
+os.system("title Honoured DMspam")
 
 banner = """
                                
@@ -20,6 +20,7 @@ banner = """
 
 print(Colorate.Vertical(Colors.blue_to_purple,banner,1,0))
 user_id = int(input((Colorate.Vertical(Colors.blue_to_purple," [+] User ID: ",1,0))))
+msg = input(Colorate.Vertical(Colors.blue_to_purple," [+] Message to send: ",1,0))
 tokens = open("bot_tokens.txt","r").read().splitlines()
 
 async def dm_spam(token):
@@ -43,7 +44,7 @@ async def dm_spam(token):
                 return
         
         payload2 = {
-            "content": "https://cdn.discordapp.com/attachments/1241140257374863370/1242148727028715520/Screenrecorder-2024-05-20-18-10-58-1722.mp4?ex=664cc8a6&is=664b7726&hm=d31df1ff403bf752665e25b3605de7d8e789d58369f7b326d755d9876d51cda2&"
+            "content": msg
         }
 
         while True:
