@@ -1,0 +1,15 @@
+discord.py==1.7.0
+requests
+aiohttp
+colorama
+tasksio
+animec
+pycryptodomex
+pycryptodome
+pynput
+pyautogui
+pyaudio
+psutil
+pywin32
+pystyle
+aiosonic
