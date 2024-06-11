@@ -2,7 +2,7 @@
 I coded this tool months ago and now i completely finished it, in the period i was coding this tool i was reading jjk, so i decided to dedicate it to the honoured one, Satoru Gojo, lol.
 # Setup
 1. Download or clone this repository to your machine
-2. You need to have installed [Python](https://www.python.org/)
+2. You need to have [Python](https://www.python.org/) installed 
 3. Once you have installed it, write in Python terminal `pip install -r requirements.txt`, in order to install all the required libraries.
 4. Now you can run the script you're interested in.
 # About selfbot
