@@ -1,4 +1,6 @@
 {
-    "token": "MTAwOTkzOTM4NTczMjU3MTIxOA.Gse9sV.L-NPqHiCGMsx6C6KfFk3ddpNnfU-3hs0T8gNpM",
-    "prefix": "%"
+    "token": "TOKEN HERE",
+    "prefix": "PREFIX HERE",
+    "spam_channel_name": "",
+    "spam_role_name": ""
 }
