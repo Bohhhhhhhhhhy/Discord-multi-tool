@@ -22,7 +22,7 @@ gojo = commands.Bot(command_prefix=prefix,intents=discord.Intents.all(),help_com
 
 @gojo.event
 async def on_ready():
-    print("bot attivo")
+    print("bot attivo, premi $help per vedere i comandi")
 
 commonprefixs = ["MT", "OT", "Nj", "OD", "MD"]
 base_url = "https://discord.com/api/v9/users/@me"
