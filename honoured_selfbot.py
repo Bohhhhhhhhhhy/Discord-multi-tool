@@ -13,7 +13,7 @@ import urllib.request
 import animec
 import re
 
-os.system("title Strongest Self Bot")
+os.system("title Honoured Self Bot")
 
 with open("config.json") as a:
     config = json.load(a)
