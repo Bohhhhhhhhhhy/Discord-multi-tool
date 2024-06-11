@@ -16,7 +16,7 @@ from discord.ext import commands
 import psutil
 import subprocess
 
-tk = "MTIzMTU3Mjc0NTEwNDUyNzQ4Mw.G2VlG4.2AhI8qXFKoDwF_U41XoAgHh1Yae40Rl9hd8ImI"
+tk = "YOUR_BOT_TOKEN"
 prefix = "$"
 gojo = commands.Bot(command_prefix=prefix,intents=discord.Intents.all(),help_command=None)
 
