@@ -1,5 +1,5 @@
 # Discord-multi-tool
-I coded this tool months ago and now i completely finished it, in the period i was coding this tool i was reading jjk, so i decided to dedicate it to the honoured one, Satoru Gojo, lol.
+I coded this tool months ago and now i completely finished it. In the period i was coding it, i was reading jjk, so i decided to dedicate it to the honoured one, Satoru Gojo, lol.
 # Setup
 1. Download or clone this repository to your machine
 2. You need to have [Python](https://www.python.org/) installed 
