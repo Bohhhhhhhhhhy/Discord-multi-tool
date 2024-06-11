@@ -6,10 +6,10 @@ I coded this tool months ago and now i completely finished it, in the period i w
 3. Once you have installed it, write in Python terminal `pip install -r requirements.txt`, in order to install all the required libraries.
 4. Now you can run the script you're interested in.
 # About the selfbot
-You must compile the config.json file or it won't work.
+You must compile the `config.json` file or it won't work.
 # About the DMspam tool
-You must insert your bot tokens in bot_tokens.txt 
-\nNote: the spam won't work if the victim isn't in a discord server with all the bots or if the victim has the dms closed.
+You must insert your bot tokens in `bot_tokens.txt`. 
+Note: the spam won't work if the victim isn't in a discord server with all the bots or if the victim has the dms closed.
 # About the RAT tool
 You must insert your discord bot token inside the quotes "YOUR_BOT_TOKEN"
 \nIf you want, you can convert the file from py to exe, using libraries like `pyinstaller` or `auto_py_to_exe`
