@@ -11,5 +11,5 @@ You must compile the `config.json` file or it won't work.
 You must insert your bot tokens in `bot_tokens.txt`. 
 Note: the spam won't work if the victim isn't in a discord server with all the bots or if the victim has the dms closed.
 # About the RAT tool
-You must insert your discord bot token inside the quotes "YOUR_BOT_TOKEN"
-\nIf you want, you can convert the file from py to exe, using libraries like `pyinstaller` or `auto_py_to_exe`
+You must insert your discord bot token inside the quotes "YOUR_BOT_TOKEN". 
+If you want, you can convert the file from py to exe, using libraries like `pyinstaller` or `auto_py_to_exe`
