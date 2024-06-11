@@ -9,7 +9,7 @@ from tasksio import TaskPool
 import random
 import threading
 
-os.system("title Strongest Nuker")
+os.system("title Honoured Nuker")
 
 token = input(Colorate.Horizontal(Colors.cyan_to_blue, "\n [+] User/Bot token: ",1,0))
 guild_id = input(Colorate.Horizontal(Colors.cyan_to_blue, " [+] Guild id: (server nuker only, if you're using account nuker leave blank) ",1,0))
