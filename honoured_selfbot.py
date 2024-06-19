@@ -29,8 +29,8 @@ headers = {
 }
 embed_handle = "||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||||||||||"
 COLOR = "#800080"
-IMAGE = "https://media.discordapp.net/attachments/1170463640764293140/1199014500255408260/228136787949a85c103a630c753726aa.gif?ex=662683c5&is=66140ec5&hm=84dfcf69ca908ff14eedfee23706d4cd939a0a8b25d26a12e3c2293646c47816&"
-author = "**Honoured** 🫸🏻🔴🔵🫷🏻🤌🏻🫴🏻⏤͟͟͞🟣 **Self Bot**"
+IMAGE = "https://discord.com/channels/@me/1249314027818057778/1253079239570362462"
+author = "**Grill Master** **Self Bot**"
 nuke = False
 
 spam_channel = config["spam_channel_name"]
@@ -132,9 +132,9 @@ async def on_guild_channel_create(channel):
     nuke = True
     embed = discord.Embed(title="Raided lol 🗣️",description="Nuked",color=0x800080)
     embed.set_image(url=IMAGE)
-    webhook = await channel.create_webhook(name="The Honoured One")
+    webhook = await channel.create_webhook(name="Grill Master")
     while nuke:
-        await webhook.send("@everyone https://discord.gg/THwHahTDaz",embed=embed)
+        await webhook.send("@everyone Piccolo top 1",embed=embed)
 
 @gojo.command()
 async def stop(ctx):
@@ -433,18 +433,17 @@ async def anime(ctx,*,query):
         await ctx.send("No Corresponding Anime is Found!")
     
     content = f"""
-> **{anime.title_english}**
+{anime.description}
 
-> `{anime.description}`
-> `Episodes: {str(anime.episodes)}`
-> `Rating: {str(anime.rating)}`
-> `Broadcast: {str(anime.broadcast)}`
-> `Status: {str(anime.status)}`
-> `Type: {str(anime.type)}`
-> `NSFW Status: {str(anime.is_nsfw())}`
-{anime.poster}
+Episodes: {str(anime.episodes)}
+Rating: {str(anime.rating)}
+Broadcast: {str(anime.broadcast)}
+Status: {str(anime.status)}
+Type: {str(anime.type)}
+NSFW Status: {str(anime.is_nsfw())}
 """
-    await ctx.send(content)
+    url = make_embed(anime.title_english,content,anime.poster)
+    await ctx.send(url)
 
 @gojo.event
 async def on_ready():
