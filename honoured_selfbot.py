@@ -30,7 +30,7 @@ headers = {
 embed_handle = "||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||||||||||"
 COLOR = "#800080"
 IMAGE = "https://media.discordapp.net/attachments/1170463640764293140/1199014500255408260/228136787949a85c103a630c753726aa.gif?ex=662683c5&is=66140ec5&hm=84dfcf69ca908ff14eedfee23706d4cd939a0a8b25d26a12e3c2293646c47816&"
-author = "Honoured 🫸🏻🔴🔵🫷🏻🤌🏻🫴🏻⏤͟͟͞🟣 Self Bot"
+author = "**Honoured** 🫸🏻🔴🔵🫷🏻🤌🏻🫴🏻⏤͟͟͞🟣 **Self Bot**"
 nuke = False
 
 spam_channel = config["spam_channel_name"]
@@ -173,13 +173,12 @@ async def tokeninfo(ctx, token2):
     phone = r["phone"]
     mfa = r["mfa_enabled"]
     await ctx.send(f"""```
-{username} info:
-
-ID: {user_id}
-Locale: {locale}
-Email: {email}
-Phone: {phone}    
-MFA: {mfa}   
+**{username}** info:
+> `ID: {user_id}`
+> `Locale: {locale}`
+> `Email: {email}`
+> `Phone: {phone}`    
+> `MFA: {mfa}`   
 ```""")
     
 @gojo.command()
@@ -210,13 +209,14 @@ async def userinfo(ctx, id):
     avatar_urll = f"https://cdn.discordapp.com/avatars/{id}/{user_data['avatar']}"
 
     info = f"""
-First Piece of Token: {first_part}
-Account Created {user.created_at.strftime(date_format)}
-HypeSquad: {hypesquad_class}
-Nitro: {is_premium}
+> **{user.name}** info:
+> `First Piece of Token: {first_part}`
+> `Account Created {user.created_at.strftime(date_format)}`
+> `HypeSquad: {hypesquad_class}`
+> `Nitro: {is_premium}`
+{avatar_urll}
 """
-    url = make_embed(f"{user.name} info", info, avatar_urll)
-    await ctx.send(url)
+    await ctx.send(info)
 
 @gojo.command()
 async def serverinfo(ctx):
@@ -250,16 +250,16 @@ async def ipinfo(ctx, ip):
     org = r["org"]
     
     content = f"""
-country: {country}
-region: {region}
-city: {city}
-zip: {zip}
-isp: {isp}
-as: {As}
-org: {org}
+> **{ip}** info:
+> `country: {country}`
+> `region: {region}`
+> `city: {city}`
+> `zip: {zip}`
+> `isp: {isp}`
+> `as: {As}`
+> `org: {org}`
 """
-    url = make_embed(f"{ip} info",content,image=None)
-    await ctx.send(url)
+    await ctx.send(content)
 
 @gojo.command()
 async def strongests(ctx):
@@ -357,6 +357,7 @@ async def fun(ctx):
     content = f"""
 > {author}
 > `{prefix}meme - Send a random meme`
+> `{prefix}anime [name] - Give info about an anime
 > `{prefix}allah - ALLAAAAAH`
 > `{prefix}kiss [user] - Kiss somebody`
 > `{prefix}hug [user] - Hug somebody`
@@ -394,7 +395,7 @@ async def kiss(ctx, user:discord.User):
     res = r.json()
     url = res["url"]
     urll = make_embed("Kiss 💋",f"@{user.name}", url)
-    await ctx.send(urll)
+    await ctx.send(f"Kiss 💋 @{user.name}", url)
 
 @gojo.command()
 async def hug(ctx, user:discord.User):
@@ -402,8 +403,8 @@ async def hug(ctx, user:discord.User):
     r = requests.get("https://nekos.life/api/v2/img/hug")
     res = r.json()
     url = res["url"]
-    urll = make_embed("Hug 🫂",f"@{user.name}", url)
-    await ctx.send(urll)
+    urll = make_embed("Hug 🫂",f"", url)
+    await ctx.send(f"Hug 🫂 @{user.name}", url)
 
 @gojo.command()
 async def slap(ctx, user:discord.User):
@@ -412,7 +413,7 @@ async def slap(ctx, user:discord.User):
     res = r.json()
     url = res["url"]
     urll = make_embed("Slap 👋",f"@{user.name}",url)
-    await ctx.send(urll)
+    await ctx.send(f"Slap 👋 @{user.name}", url)
 
 @gojo.command()
 async def waifu(ctx):
@@ -421,8 +422,7 @@ async def waifu(ctx):
     data = response.json()
     if 'url' in data:
         image_url = data['url']
-        url = make_embed("🔞", "waifu", image_url)
-        await ctx.send(url)
+        await ctx.send(image_url)
 
 @gojo.command()
 async def anime(ctx,*,query):
