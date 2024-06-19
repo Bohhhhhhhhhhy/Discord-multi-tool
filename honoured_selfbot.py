@@ -302,6 +302,7 @@ async def allah(ctx):
         await ctx.send("# ALLAAAAAH",file=discord.File(file_path))
 
 def make_embed(title, content, image=None):
+#the author patched embedl.ink, big F
     parsedcontent = urllib.parse.quote(content)
     parsedtitle = urllib.parse.quote(title)
     parsedauthor = urllib.parse.quote(author)
@@ -313,69 +314,69 @@ def make_embed(title, content, image=None):
 async def help(ctx):
     await ctx.message.delete()
     content = f"""
-{prefix}raid - Raid Commands
-{prefix}utilities - Utility Commands
-{prefix}fun - Fun Commands
-{prefix}jjk - jjk Commands
+> {author}
+> `{prefix}raid - Raid Commands`
+> `{prefix}utilities - Utility Commands`
+> `{prefix}fun - Fun Commands`
+> `{prefix}jjk - jjk Commands`
 """
-    url = make_embed("Help",content,IMAGE)
-    await ctx.send(url)
+    await ctx.send(content)
 
 @gojo.command()
 async def raid(ctx):
     await ctx.message.delete()
     content = f"""
-{prefix}infinite_void - Destroy Server
-{prefix}ccr [amount] - Create Channels
-{prefix}cdel - Delete Channels
-{prefix}rcr [amount] - Create Roles
-{prefix}rdel - Delete Roles
-{prefix}rename [name] - Rename Guild
-{prefix}stop - Stop Nuking
+> {author}
+> `{prefix}infinite_void - Destroy Server`
+> `{prefix}ccr [amount] - Create Channels`
+> `{prefix}cdel - Delete Channels`
+> `{prefix}rcr [amount] - Create Roles`
+> `{prefix}rdel - Delete Roles`
+> `{prefix}rename [name] - Rename Guild`
+> `{prefix}stop - Stop Nuking`
 """
-    url = make_embed("Raid cmds",content,IMAGE)
-    await ctx.send(url)
+    await ctx.send(content)
 
 @gojo.command()
 async def utilities(ctx):
     await ctx.message.delete()
     content = f"""
-{prefix}userinfo [id] - Get info on a user
-{prefix}serverinfo - Get server info 
-{prefix}tokeninfo [token] - Get info on a token
-{prefix}ipinfo [IP] - Get info on a IP
-{prefix}purge [amount] - Purge channel Messages
-{prefix}stream/play/listen/watch - Change your Status
+> {author}
+> `{prefix}userinfo [id] - Get info on a user`
+> `{prefix}serverinfo - Get server info` 
+> `{prefix}tokeninfo [token] - Get info on a token`
+> `{prefix}ipinfo [IP] - Get info on a IP`
+> `{prefix}purge [amount] - Purge channel Messages`
+> `{prefix}stream/play/listen/watch - Change your Status`
 """
-    url = make_embed("Utility cmds",content,IMAGE)
-    await ctx.send(url)
+    await ctx.send(content)
 
 @gojo.command()
 async def fun(ctx):
     await ctx.message.delete()
     content = f"""
-{prefix}meme - Send a random meme
-{prefix}allah - ALLAAAAAH
-{prefix}kiss [user] - Kiss somebody
-{prefix}hug [user] - Hug somebody
-{prefix}slap [user] - Slap somebody
-{prefix}waifu - Random waifu 🔞
+> {author}
+> `{prefix}meme - Send a random meme`
+> `{prefix}allah - ALLAAAAAH`
+> `{prefix}kiss [user] - Kiss somebody`
+> `{prefix}hug [user] - Hug somebody`
+> `{prefix}slap [user] - Slap somebody`
+> `{prefix}waifu - Random waifu 🔞`
 """
-    url = make_embed("Fun cmds",content,IMAGE)
-    await ctx.send(url)
+    await ctx.send(content)
 
 @gojo.command()
 async def jjk(ctx):
     await ctx.message.delete()
     content = f"""
-{prefix}strongests - Battle of the strongests Edit
-{prefix}yowaimo - Gojo edit
-{prefix}daddyraga - DADDYRAGAAA!!!
-{prefix}go__jo - Rip bozo
-{prefix}hollowpurple - hp edit
+> {author}
+> `{prefix}strongests - Battle of the strongests Edit`
+> `{prefix}yowaimo - Gojo edit`
+> `{prefix}daddyraga - DADDYRAGAAA!!!`
+> `{prefix}go__jo - Rip bozo`
+> `{prefix}hollowpurple - hp edit`
 """
-    url = make_embed("Jjk cmds",content,IMAGE)
-    await ctx.send(url)
+    await ctx.send(content)
 
 @gojo.command()
 async def meme(ctx):
@@ -384,8 +385,7 @@ async def meme(ctx):
         async with cs.get("https://www.reddit.com/r/memes.json") as r:
             memes = await r.json()
             urll=memes['data']['children'][random.randint(0,25)]['data']['url']
-    urlll = make_embed("Random Meme","", urll)
-    await ctx.send(urlll)
+    await ctx.send(urll)
 
 @gojo.command()
 async def kiss(ctx, user:discord.User):
