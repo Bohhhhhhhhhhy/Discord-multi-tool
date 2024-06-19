@@ -9,12 +9,12 @@ from tasksio import TaskPool
 import random
 import threading
 
-os.system("title Honoured Nuker")
+os.system("title The Grill Master Nuker")
 
 token = input(Colorate.Horizontal(Colors.cyan_to_blue, "\n [+] User/Bot token: ",1,0))
 guild_id = input(Colorate.Horizontal(Colors.cyan_to_blue, " [+] Guild id: (server nuker only, if you're using account nuker leave blank) ",1,0))
 
-spam_role_channels = ["nuked by sakai","by sakai","sakai solos"]
+spam_role_channels = ["nuked by The Grill Master","by piccolo","junior solos"]
 headers2={"Authorization": token}
 headers={"Authorization": f"Bot {token}"}
 
