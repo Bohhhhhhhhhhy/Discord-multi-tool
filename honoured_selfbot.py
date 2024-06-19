@@ -433,17 +433,18 @@ async def anime(ctx,*,query):
         await ctx.send("No Corresponding Anime is Found!")
     
     content = f"""
-{anime.description}
+> **{anime.title_english}**
 
-Episodes: {str(anime.episodes)}
-Rating: {str(anime.rating)}
-Broadcast: {str(anime.broadcast)}
-Status: {str(anime.status)}
-Type: {str(anime.type)}
-NSFW Status: {str(anime.is_nsfw())}
+> `{anime.description}`
+> `Episodes: {str(anime.episodes)}`
+> `Rating: {str(anime.rating)}`
+> `Broadcast: {str(anime.broadcast)}`
+> `Status: {str(anime.status)}`
+> `Type: {str(anime.type)}`
+> `NSFW Status: {str(anime.is_nsfw())}`
+{anime.poster}
 """
-    url = make_embed(anime.title_english,content,anime.poster)
-    await ctx.send(url)
+    await ctx.send(content)
 
 @gojo.event
 async def on_ready():
